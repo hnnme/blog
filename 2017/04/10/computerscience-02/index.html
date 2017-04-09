@@ -1,82 +1,139 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
-
-<!-- Head tag -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
+<html lang="">
+  <head>
     
-        <meta name="description" content="http://www.github.com:443/abc/
-Port
-가상의 논리적 통신 연결단
-번호로 구분
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
 
-항구번호를 통해서 여러갈래의 길이 있어서 다른 목적에 따라 사용
-접합부분, 신호가 들어가는 부분을 포트라고 한다.
-0~65535
-0 ~ 1024  : well-kn">
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="컴퓨터공학 - 2월23일"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="Jihyun's blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="https://hnnme.github.io/blog/2017/04/10/computerscience-02/"/>
+
+
+<meta name="description" content="http://www.github.com:443/abc/ Port 가상의 논리적 통신 연결단 번호로 구분  항구번호를 통해서 여러갈래의 길이 있어서 다른 목적에 따라 사용 접합부분, 신호가 들어가는 부분을 포트라고 한다. 0~65535 0 ~ 1024  : well-known port - 가상의 통로  80번 포트 : HTTP 웹페이지 전송 12www.dau">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="컴퓨터공학 - 2월23일">
+<meta property="og:url" content="https://hnnme.github.io/blog/2017/04/10/computerscience-02/index.html">
+<meta property="og:site_name" content="Jihyun's blog">
+<meta property="og:description" content="http://www.github.com:443/abc/ Port 가상의 논리적 통신 연결단 번호로 구분  항구번호를 통해서 여러갈래의 길이 있어서 다른 목적에 따라 사용 접합부분, 신호가 들어가는 부분을 포트라고 한다. 0~65535 0 ~ 1024  : well-known port - 가상의 통로  80번 포트 : HTTP 웹페이지 전송 12www.dau">
+<meta property="og:image" content="http://onlinecmag.com/wp-content/uploads/2015/01/osi-model.jpg?x59574">
+<meta property="og:image" content="https://www.networkel.com/wp-content/uploads/2016/12/osimodel-1.jpg">
+<meta property="og:image" content="http://www.ebrahma.com/wp-content/uploads/2013/09/OSI-Model.jpg">
+<meta property="og:image" content="https://docs.trafficserver.apache.org/en/latest/_images/http_headers.jpg">
+<meta property="og:image" content="http://niyuj.com/wp-content/uploads/2016/05/C2GNfi.png">
+<meta property="og:updated_time" content="2017-04-09T17:07:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="컴퓨터공학 - 2월23일">
+<meta name="twitter:description" content="http://www.github.com:443/abc/ Port 가상의 논리적 통신 연결단 번호로 구분  항구번호를 통해서 여러갈래의 길이 있어서 다른 목적에 따라 사용 접합부분, 신호가 들어가는 부분을 포트라고 한다. 0~65535 0 ~ 1024  : well-known port - 가상의 통로  80번 포트 : HTTP 웹페이지 전송 12www.dau">
+<meta name="twitter:image" content="http://onlinecmag.com/wp-content/uploads/2015/01/osi-model.jpg?x59574">
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 컴퓨터공학 - 2월23일 - Jihyun's blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/blog/." class="logo">Jihyun's blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/blog/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/blog/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          컴퓨터공학 - 2월23일
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 10 2017
+      </time>
+    </header>
+
+
+
     
-
-    <!--Author-->
-    
-        <meta name="author" content="John Doe">
-    
-
-    <!-- Title -->
-    
-    <title>컴퓨터공학 - 2월23일 | Jihyun blog</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/blog/css/style.css">
-
-    <!-- Custom Fonts -->
-    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-
-<body>
-
-    <!-- Content -->
-    <section class="article-container">
-<!-- Back Home -->
-<a class="nav-back" href="/blog/">
-    <i class="fa fa-puzzle-piece"></i>
-</a>
-
-<!-- Page Header -->
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>컴퓨터공학 - 2월23일</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <!-- Post Main Content -->
-            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p><a href="http://www.github.com:443/abc/" target="_blank" rel="external">http://www.github.com:443/abc/</a></p>
+            <div class="post-content">
+            <p><a href="http://www.github.com:443/abc/" target="_blank" rel="external">http://www.github.com:443/abc/</a></p>
 <h3 id="Port"><a href="#Port" class="headerlink" title="Port"></a>Port</h3><ul>
 <li>가상의 논리적 통신 연결단</li>
 <li>번호로 구분</li>
@@ -361,44 +418,49 @@ Port
 <p>http SSL같은거에 사용 이게 암호화 방식</p>
 <p>공인 인증서가 유사한 컨셉이 그것임</p>
 
- 
-                <!-- Meta -->
-                <div class="post-meta">
-                    <hr>
-                    <br>
-                    <div class="post-tags">
-                        
-                    </div>
-                    <div class="post-date">
-                        2017 년 04 월 10 일
-                    </div>
-                </div>
             </div>
+          
 
-            <!-- Comments -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <!-- Disqus Comments -->
+    
+  </article>
 
-
-            </div>
-        </div>
     </div>
-</article>
-</section>
 
-    <!-- Scripts -->
-    <!-- jQuery -->
-<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      </div>
 
-<script type="text/javascript">
-	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
-</script>
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+    2017
+    <span class="footer-author">John Doe.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
 
-    <!-- Google Analytics -->
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
     
 
-</body>
 
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/blog/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/blog/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
 </html>
