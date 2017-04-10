@@ -33,17 +33,17 @@
 <link rel="canonical" href="https://hnnme.github.io/blog/2017/04/10/vuex/"/>
 
 
-<meta name="description" content="참고하기Vuex 참고하기 Vuex 설치하기1npm i -D vuex Vuex 세팅하기1) main.js에 Vuex를  import시키기 1import Vuex from &apos;vuex&apos;; 2) Vuex를 쓰겠다고 해주기 1Vue.use(Vuex); 3) Vex.Store로 store 객체 생성 1234567891011121314151617const store =">
+<meta name="description" content="참고하기Vuex 참고하기 Vue에서 비부모관계에서 통신을 할 경우   전역에 Vue로 생성자 객체 를 만든후 그것을 통해 통신하는 방법을 사용할 수 있고  Vue에서 제공하는 Vuex를 사용할 수도 있다.  Vue에서 제공하는 Vuex를 사용해보자.Vuex 설치하기1npm i -D vuex Vuex 세팅하기1) main.js에 Vuex를  import시키기">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vuex">
 <meta property="og:url" content="https://hnnme.github.io/blog/2017/04/10/vuex/index.html">
 <meta property="og:site_name" content="Jihyun's blog">
-<meta property="og:description" content="참고하기Vuex 참고하기 Vuex 설치하기1npm i -D vuex Vuex 세팅하기1) main.js에 Vuex를  import시키기 1import Vuex from &apos;vuex&apos;; 2) Vuex를 쓰겠다고 해주기 1Vue.use(Vuex); 3) Vex.Store로 store 객체 생성 1234567891011121314151617const store =">
-<meta property="og:updated_time" content="2017-04-10T11:25:10.000Z">
+<meta property="og:description" content="참고하기Vuex 참고하기 Vue에서 비부모관계에서 통신을 할 경우   전역에 Vue로 생성자 객체 를 만든후 그것을 통해 통신하는 방법을 사용할 수 있고  Vue에서 제공하는 Vuex를 사용할 수도 있다.  Vue에서 제공하는 Vuex를 사용해보자.Vuex 설치하기1npm i -D vuex Vuex 세팅하기1) main.js에 Vuex를  import시키기">
+<meta property="og:updated_time" content="2017-04-10T16:22:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuex">
-<meta name="twitter:description" content="참고하기Vuex 참고하기 Vuex 설치하기1npm i -D vuex Vuex 세팅하기1) main.js에 Vuex를  import시키기 1import Vuex from &apos;vuex&apos;; 2) Vuex를 쓰겠다고 해주기 1Vue.use(Vuex); 3) Vex.Store로 store 객체 생성 1234567891011121314151617const store =">
+<meta name="twitter:description" content="참고하기Vuex 참고하기 Vue에서 비부모관계에서 통신을 할 경우   전역에 Vue로 생성자 객체 를 만든후 그것을 통해 통신하는 방법을 사용할 수 있고  Vue에서 제공하는 Vuex를 사용할 수도 있다.  Vue에서 제공하는 Vuex를 사용해보자.Vuex 설치하기1npm i -D vuex Vuex 세팅하기1) main.js에 Vuex를  import시키기">
 
 
 <link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=1.1" />
@@ -128,12 +128,17 @@
     
             <div class="post-content">
             <h3 id="참고하기"><a href="#참고하기" class="headerlink" title="참고하기"></a>참고하기</h3><p><a href="https://vuex.vuejs.org/kr/getting-started.html" target="_blank" rel="external">Vuex 참고하기</a></p>
-<h2 id="Vuex-설치하기"><a href="#Vuex-설치하기" class="headerlink" title="Vuex 설치하기"></a>Vuex 설치하기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -D vuex</div></pre></td></tr></table></figure>
+<p>Vue에서 비부모관계에서 통신을 할 경우 </p>
+<ul>
+<li>전역에 Vue로 생성자 객체 를 만든후 그것을 통해 통신하는 방법을 사용할 수 있고 </li>
+<li>Vue에서 제공하는 Vuex를 사용할 수도 있다.</li>
+</ul>
+<h3 id="Vue에서-제공하는-Vuex를-사용해보자"><a href="#Vue에서-제공하는-Vuex를-사용해보자" class="headerlink" title="Vue에서 제공하는 Vuex를 사용해보자."></a>Vue에서 제공하는 Vuex를 사용해보자.</h3><h2 id="Vuex-설치하기"><a href="#Vuex-설치하기" class="headerlink" title="Vuex 설치하기"></a>Vuex 설치하기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -D vuex</div></pre></td></tr></table></figure>
 <h2 id="Vuex-세팅하기"><a href="#Vuex-세팅하기" class="headerlink" title="Vuex 세팅하기"></a>Vuex 세팅하기</h2><p>1) main.js에 Vuex를  import시키기</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span>;</div></pre></td></tr></table></figure>
 <p>2) Vuex를 쓰겠다고 해주기</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.use(Vuex);</div></pre></td></tr></table></figure>
-<p>3) Vex.Store로 store 객체 생성</p>
+<p>3) Vuex.Store로 store 객체 생성</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="attr">state</span>: &#123;</div><div class="line">    <span class="attr">user</span>: &#123;</div><div class="line">      <span class="attr">name</span>: <span class="string">'Jihyun'</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">getters</span>: &#123;</div><div class="line">    getUserInfo(state) &#123;</div><div class="line">      <span class="keyword">return</span> state.user;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">mutations</span>: &#123;</div><div class="line">    setUserInfo(state, new_user_info) &#123;</div><div class="line">      state.user = new_user_info;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <ul>
 <li>State : 상태값들을 설정</li>
@@ -164,7 +169,7 @@
     2017
     <span class="footer-author">Jihyun Lee.</span>
     <span class="power-by">
-        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+        由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a> 强力驱动
     </span>
 </span>
 

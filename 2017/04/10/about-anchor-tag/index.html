@@ -33,17 +33,17 @@
 <link rel="canonical" href="https://hnnme.github.io/blog/2017/04/10/about-anchor-tag/"/>
 
 
-<meta name="description" content="1&amp;lt;a href&amp;gt;링크&amp;lt;/a&amp;gt; a태그를 눌렀을때 기본 동작은 /으로 이동한다. 이때 이것을 방지하도록 처리해준다. 12event.stopPropagation();event.stopImmediatePropagation(); vue에서는 이렇게 처리해준다. 12&amp;lt;a href v-on:click.prevent=&amp;quot;&amp;quot;&amp;gt">
+<meta name="description" content="1&amp;lt;a href&amp;gt;링크&amp;lt;/a&amp;gt; a태그를 눌렀을때 기본 동작은 /으로 이동한다. 이때 이것을 방지하도록 처리해준다. 이벤트의 상속을 차단하기 위해 사용한다. 12event.stopPropagation();event.stopImmediatePropagation(); vue에서는 이렇게 처리해준다. 12&amp;lt;a href v-on:click.">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="a 태그에 대해서">
 <meta property="og:url" content="https://hnnme.github.io/blog/2017/04/10/about-anchor-tag/index.html">
 <meta property="og:site_name" content="Jihyun's blog">
-<meta property="og:description" content="1&amp;lt;a href&amp;gt;링크&amp;lt;/a&amp;gt; a태그를 눌렀을때 기본 동작은 /으로 이동한다. 이때 이것을 방지하도록 처리해준다. 12event.stopPropagation();event.stopImmediatePropagation(); vue에서는 이렇게 처리해준다. 12&amp;lt;a href v-on:click.prevent=&amp;quot;&amp;quot;&amp;gt">
-<meta property="og:updated_time" content="2017-04-09T17:03:45.000Z">
+<meta property="og:description" content="1&amp;lt;a href&amp;gt;링크&amp;lt;/a&amp;gt; a태그를 눌렀을때 기본 동작은 /으로 이동한다. 이때 이것을 방지하도록 처리해준다. 이벤트의 상속을 차단하기 위해 사용한다. 12event.stopPropagation();event.stopImmediatePropagation(); vue에서는 이렇게 처리해준다. 12&amp;lt;a href v-on:click.">
+<meta property="og:updated_time" content="2017-04-10T15:43:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="a 태그에 대해서">
-<meta name="twitter:description" content="1&amp;lt;a href&amp;gt;링크&amp;lt;/a&amp;gt; a태그를 눌렀을때 기본 동작은 /으로 이동한다. 이때 이것을 방지하도록 처리해준다. 12event.stopPropagation();event.stopImmediatePropagation(); vue에서는 이렇게 처리해준다. 12&amp;lt;a href v-on:click.prevent=&amp;quot;&amp;quot;&amp;gt">
+<meta name="twitter:description" content="1&amp;lt;a href&amp;gt;링크&amp;lt;/a&amp;gt; a태그를 눌렀을때 기본 동작은 /으로 이동한다. 이때 이것을 방지하도록 처리해준다. 이벤트의 상속을 차단하기 위해 사용한다. 12event.stopPropagation();event.stopImmediatePropagation(); vue에서는 이렇게 처리해준다. 12&amp;lt;a href v-on:click.">
 
 
 <link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=1.1" />
@@ -130,6 +130,7 @@
             <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>&gt;</span>링크<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>a태그를 눌렀을때 기본 동작은 /으로 이동한다.</p>
 <p>이때 이것을 방지하도록 처리해준다.</p>
+<p>이벤트의 상속을 차단하기 위해 사용한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">event.stopPropagation();</div><div class="line">event.stopImmediatePropagation();</div></pre></td></tr></table></figure>
 <p>vue에서는 이렇게 처리해준다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href v-on:click.prevent=&quot;&quot;&gt;링크&lt;/a&gt;</div><div class="line">&lt;a href v-on:click.stop.prevent=&quot;&quot;&gt;링크&lt;/a&gt;</div></pre></td></tr></table></figure>
@@ -151,7 +152,7 @@
     2017
     <span class="footer-author">Jihyun Lee.</span>
     <span class="power-by">
-        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+        由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a> 强力驱动
     </span>
 </span>
 
