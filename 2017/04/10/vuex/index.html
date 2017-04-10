@@ -40,7 +40,7 @@
 <meta property="og:url" content="https://hnnme.github.io/blog/2017/04/10/vuex/index.html">
 <meta property="og:site_name" content="Jihyun's blog">
 <meta property="og:description" content="참고하기Vuex 참고하기 Vuex 설치하기1npm i -D vuex Vuex 세팅하기1) main.js에 Vuex를  import시키기 1import Vuex from &apos;vuex&apos;; 2) Vuex를 쓰겠다고 해주기 1Vue.use(Vuex); 3) Vex.Store로 store 객체 생성 1234567891011121314151617const store =">
-<meta property="og:updated_time" content="2017-04-10T11:19:02.000Z">
+<meta property="og:updated_time" content="2017-04-10T11:25:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuex">
 <meta name="twitter:description" content="참고하기Vuex 참고하기 Vuex 설치하기1npm i -D vuex Vuex 세팅하기1) main.js에 Vuex를  import시키기 1import Vuex from &apos;vuex&apos;; 2) Vuex를 쓰겠다고 해주기 1Vue.use(Vuex); 3) Vex.Store로 store 객체 생성 1234567891011121314151617const store =">
@@ -136,12 +136,16 @@
 <p>3) Vex.Store로 store 객체 생성</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="attr">state</span>: &#123;</div><div class="line">    <span class="attr">user</span>: &#123;</div><div class="line">      <span class="attr">name</span>: <span class="string">'Jihyun'</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">getters</span>: &#123;</div><div class="line">    getUserInfo(state) &#123;</div><div class="line">      <span class="keyword">return</span> state.user;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">mutations</span>: &#123;</div><div class="line">    setUserInfo(state, new_user_info) &#123;</div><div class="line">      state.user = new_user_info;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <ul>
-<li>State : 상태</li>
-<li>getters : 값을 가져오는 함수</li>
-<li>Mutations : 값을 바꿔주는 함수 </li>
+<li>State : 상태값들을 설정</li>
+<li>getters : 값을 가져오는 함수들을 설정</li>
+<li>Mutations : 값을 바꿔주는 함수들을 설정</li>
 </ul>
 <p>4) Vue를 생성하면서 store객체를 넣어준다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">  router,</div><div class="line">  store,<span class="comment">//사용되도록 설정</span></div><div class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>5) vue파일에 사용해보기</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">methods: &#123;</div><div class="line">           knownUserInfo() &#123;</div><div class="line">               <span class="keyword">this</span>.$store.getters.getUserInfo;</div><div class="line">               <span class="keyword">this</span>.$store.commit(<span class="string">'setUserInfo'</span>, &#123;넘겨줄 값&#125;);</div><div class="line">           &#125;,</div></pre></td></tr></table></figure>
+<h4 id="store에-있는-getters에서-getUserInfo에서-값을-가져온다"><a href="#store에-있는-getters에서-getUserInfo에서-값을-가져온다" class="headerlink" title="store에 있는 getters에서 getUserInfo에서 값을 가져온다."></a>store에 있는 getters에서 getUserInfo에서 값을 가져온다.</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$store.getters.getUserInfo;</div></pre></td></tr></table></figure>
+<h4 id="store에-있는-mutations에서-setUserInfo에-값을-넘겨-값을-변경"><a href="#store에-있는-mutations에서-setUserInfo에-값을-넘겨-값을-변경" class="headerlink" title="store에 있는 mutations에서 setUserInfo에 값을 넘겨 값을 변경"></a>store에 있는 mutations에서 setUserInfo에 값을 넘겨 값을 변경</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$store.commit(<span class="string">'setUserInfo'</span>, &#123;넘겨줄 값&#125;);</div></pre></td></tr></table></figure>
 
             </div>
           
