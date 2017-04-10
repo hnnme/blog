@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="vuex"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="Jihyun's blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="https://hnnme.github.io/blog/2017/04/10/vuex/"/>
+
+
+<meta name="description" content="참고하기Vuex 참고하기 Vuex 설치하기1npm i -D vuex Vuex 세팅하기1) main.js에 Vuex를  import시키기 1import Vuex from &apos;vuex&apos;; 2) Vuex를 쓰겠다고 해주기 1Vue.use(Vuex); 3) Vex.Store로 store 객체 생성 1234567891011121314151617const store =">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuex">
+<meta property="og:url" content="https://hnnme.github.io/blog/2017/04/10/vuex/index.html">
+<meta property="og:site_name" content="Jihyun's blog">
+<meta property="og:description" content="참고하기Vuex 참고하기 Vuex 설치하기1npm i -D vuex Vuex 세팅하기1) main.js에 Vuex를  import시키기 1import Vuex from &apos;vuex&apos;; 2) Vuex를 쓰겠다고 해주기 1Vue.use(Vuex); 3) Vex.Store로 store 객체 생성 1234567891011121314151617const store =">
+<meta property="og:updated_time" content="2017-04-10T11:19:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vuex">
+<meta name="twitter:description" content="참고하기Vuex 참고하기 Vuex 설치하기1npm i -D vuex Vuex 세팅하기1) main.js에 Vuex를  import시키기 1import Vuex from &apos;vuex&apos;; 2) Vuex를 쓰겠다고 해주기 1Vue.use(Vuex); 3) Vex.Store로 store 객체 생성 1234567891011121314151617const store =">
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> vuex - Jihyun's blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/blog/." class="logo">Jihyun's blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/blog/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/blog/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          vuex
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 10 2017
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h3 id="참고하기"><a href="#참고하기" class="headerlink" title="참고하기"></a>참고하기</h3><p><a href="https://vuex.vuejs.org/kr/getting-started.html" target="_blank" rel="external">Vuex 참고하기</a></p>
+<h2 id="Vuex-설치하기"><a href="#Vuex-설치하기" class="headerlink" title="Vuex 설치하기"></a>Vuex 설치하기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -D vuex</div></pre></td></tr></table></figure>
+<h2 id="Vuex-세팅하기"><a href="#Vuex-세팅하기" class="headerlink" title="Vuex 세팅하기"></a>Vuex 세팅하기</h2><p>1) main.js에 Vuex를  import시키기</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span>;</div></pre></td></tr></table></figure>
+<p>2) Vuex를 쓰겠다고 해주기</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.use(Vuex);</div></pre></td></tr></table></figure>
+<p>3) Vex.Store로 store 객체 생성</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="attr">state</span>: &#123;</div><div class="line">    <span class="attr">user</span>: &#123;</div><div class="line">      <span class="attr">name</span>: <span class="string">'Jihyun'</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">getters</span>: &#123;</div><div class="line">    getUserInfo(state) &#123;</div><div class="line">      <span class="keyword">return</span> state.user;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">mutations</span>: &#123;</div><div class="line">    setUserInfo(state, new_user_info) &#123;</div><div class="line">      state.user = new_user_info;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>State : 상태</li>
+<li>getters : 값을 가져오는 함수</li>
+<li>Mutations : 값을 바꿔주는 함수 </li>
+</ul>
+<p>4) Vue를 생성하면서 store객체를 넣어준다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">  router,</div><div class="line">  store,<span class="comment">//사용되도록 설정</span></div><div class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+    2017
+    <span class="footer-author">Jihyun Lee.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/blog/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/blog/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
