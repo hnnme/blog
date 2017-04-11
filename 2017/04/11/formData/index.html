@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://hnnme.github.io/blog/2017/04/11/formData/index.html">
 <meta property="og:site_name" content="JiHyunLee | blog">
 <meta property="og:description" content="FormData를 이용하여 통신하기">
-<meta property="og:updated_time" content="2017-04-11T02:45:09.000Z">
+<meta property="og:updated_time" content="2017-04-11T18:17:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="formData">
 <meta name="twitter:description" content="FormData를 이용하여 통신하기">
@@ -141,19 +141,25 @@
     
             <div class="post-content">
             <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> formData = <span class="keyword">new</span> FormData();</div></pre></td></tr></table></figure>
-<p>서버와의 통신중 FormData를 사용하여 보내야 되는 경우</p>
-<p>생성자함수를 사용하여 생성된 객체를 만들어 사용한다.</p>
-<h2 id="vue에서의-활용"><a href="#vue에서의-활용" class="headerlink" title="vue에서의 활용"></a>vue에서의 활용</h2><p><strong>html</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">form</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span> </span></div><div class="line">          <span class="attr">method</span>=<span class="string">"POST"</span> </div><div class="line">          @<span class="attr">submit.prevent</span>=<span class="string">"doLogin"</span> </div><div class="line">          <span class="attr">ref</span>=<span class="string">"loginForm"</span>&gt;</div><div class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<ol>
-<li>form태그에 ref라는 속성을 달아 해당 이름을 정해준다.</li>
-</ol>
-<p><strong>vue</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> form = <span class="keyword">this</span>.$refs.loginForm;</div><div class="line"><span class="keyword">let</span> formData = <span class="keyword">new</span> FormData(form);</div></pre></td></tr></table></figure>
-<ol>
-<li>this.$refs.이름 으로 form element를 FormData에 넣어준다.</li>
-</ol>
-<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><p>vue에서는 ref라는 속성을 제공하여 dom객체 핸들링을 할 수 있게 해준다.</p>
+<blockquote>
+<p> 서버와의 통신중 FormData를 사용하여 보내야 되는 경우</p>
+<p> 생성자함수를 사용하여 생성된 객체를 만들어 사용한다.</p>
+</blockquote>
+<h2 id="vue에서의-활용"><a href="#vue에서의-활용" class="headerlink" title="vue에서의 활용"></a>vue에서의 활용</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- html 파일 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">form</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span> </span></div><div class="line">          <span class="attr">method</span>=<span class="string">"POST"</span> </div><div class="line">          @<span class="attr">submit.prevent</span>=<span class="string">"doLogin"</span> </div><div class="line">          <span class="attr">ref</span>=<span class="string">"loginForm"</span>&gt;</div><div class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p> 1) form태그에 ref라는 속성을 달아 해당 이름을 정해준다.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// vue 파일</span></div><div class="line"><span class="keyword">let</span> form = <span class="keyword">this</span>.$refs.loginForm;</div><div class="line"><span class="keyword">let</span> formData = <span class="keyword">new</span> FormData(form);</div></pre></td></tr></table></figure>
+<blockquote>
+<p> 2) this.$refs.이름 으로 form element를 FormData에 넣어준다.</p>
+</blockquote>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><blockquote>
+<p> vue에서는 ref라는 속성을 제공하여 dom객체 핸들링을 할 수 있게 해준다.</p>
+</blockquote>
+<h1 id="append"><a href="#append" class="headerlink" title="append()"></a>append()</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> formData = <span class="keyword">new</span> FormData();</div><div class="line">formData.appand(<span class="string">'id'</span>,<span class="string">'me1234'</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p> append를 사용하여 정보를 추가할 수 있다.</p>
+</blockquote>
 
             </div>
           

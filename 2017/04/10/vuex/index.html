@@ -42,10 +42,12 @@
 <meta property="og:url" content="https://hnnme.github.io/blog/2017/04/10/vuex/index.html">
 <meta property="og:site_name" content="JiHyunLee | blog">
 <meta property="og:description" content="vuex를 사용하여 통신모듈화를 해보자.">
-<meta property="og:updated_time" content="2017-04-11T03:17:00.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/vuejs/vuex/dev/docs/en/images/vuex.png">
+<meta property="og:updated_time" content="2017-04-11T18:19:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuex">
 <meta name="twitter:description" content="vuex를 사용하여 통신모듈화를 해보자.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/vuejs/vuex/dev/docs/en/images/vuex.png">
 
 
 <link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=1.1" />
@@ -140,12 +142,15 @@
 
     
             <div class="post-content">
-            <h3 id="참고하기"><a href="#참고하기" class="headerlink" title="참고하기"></a>참고하기</h3><p><a href="https://vuex.vuejs.org/kr/getting-started.html" target="_blank" rel="external">Vuex 참고하기</a></p>
-<p>Vue에서 비부모관계에서 통신을 할 경우 </p>
+            <p>Vue에서 비부모관계에서 통신을 할 경우 </p>
+<blockquote>
 <ul>
 <li>전역에 Vue로 생성자 객체 를 만든후 그것을 통해 통신하는 방법을 사용할 수 있고 </li>
+</ul>
+<ul>
 <li>Vue에서 제공하는 Vuex를 사용할 수도 있다.</li>
 </ul>
+</blockquote>
 <h3 id="Vue에서-제공하는-Vuex를-사용해보자"><a href="#Vue에서-제공하는-Vuex를-사용해보자" class="headerlink" title="Vue에서 제공하는 Vuex를 사용해보자."></a>Vue에서 제공하는 Vuex를 사용해보자.</h3><h2 id="Vuex-설치하기"><a href="#Vuex-설치하기" class="headerlink" title="Vuex 설치하기"></a>Vuex 설치하기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -D vuex</div></pre></td></tr></table></figure>
 <h2 id="Vuex-세팅하기"><a href="#Vuex-세팅하기" class="headerlink" title="Vuex 세팅하기"></a>Vuex 세팅하기</h2><p>1) main.js에 Vuex를  import시키기</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span>;</div></pre></td></tr></table></figure>
@@ -153,17 +158,23 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.use(Vuex);</div></pre></td></tr></table></figure>
 <p>3) Vuex.Store로 store 객체 생성</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">  <span class="attr">state</span>: &#123;</div><div class="line">    <span class="attr">user</span>: &#123;</div><div class="line">      <span class="attr">name</span>: <span class="string">'Jihyun'</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">getters</span>: &#123;</div><div class="line">    getUserInfo(state) &#123;</div><div class="line">      <span class="keyword">return</span> state.user;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">mutations</span>: &#123;</div><div class="line">    setUserInfo(state, new_user_info) &#123;</div><div class="line">      state.user = new_user_info;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
 <ul>
 <li>State : 상태값들을 설정</li>
 <li>getters : 값을 가져오는 함수들을 설정</li>
 <li>Mutations : 값을 바꿔주는 함수들을 설정</li>
 </ul>
+</blockquote>
 <p>4) Vue를 생성하면서 store객체를 넣어준다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">  router,</div><div class="line">  store,<span class="comment">//사용되도록 설정</span></div><div class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>5) vue파일에 사용해보기</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">methods: &#123;</div><div class="line">           knownUserInfo() &#123;</div><div class="line">               <span class="keyword">this</span>.$store.getters.getUserInfo;</div><div class="line">               <span class="keyword">this</span>.$store.commit(<span class="string">'setUserInfo'</span>, &#123;넘겨줄 값&#125;);</div><div class="line">           &#125;,</div></pre></td></tr></table></figure>
 <h4 id="store에-있는-getters에서-getUserInfo에서-값을-가져온다"><a href="#store에-있는-getters에서-getUserInfo에서-값을-가져온다" class="headerlink" title="store에 있는 getters에서 getUserInfo에서 값을 가져온다."></a>store에 있는 getters에서 getUserInfo에서 값을 가져온다.</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$store.getters.getUserInfo;</div></pre></td></tr></table></figure>
 <h4 id="store에-있는-mutations에서-setUserInfo에-값을-넘겨-값을-변경"><a href="#store에-있는-mutations에서-setUserInfo에-값을-넘겨-값을-변경" class="headerlink" title="store에 있는 mutations에서 setUserInfo에 값을 넘겨 값을 변경"></a>store에 있는 mutations에서 setUserInfo에 값을 넘겨 값을 변경</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$store.commit(<span class="string">'setUserInfo'</span>, &#123;넘겨줄 값&#125;);</div></pre></td></tr></table></figure>
+<h2 id="vuex-동작-원리"><a href="#vuex-동작-원리" class="headerlink" title="vuex 동작 원리"></a>vuex 동작 원리</h2><p><img src="https://raw.githubusercontent.com/vuejs/vuex/dev/docs/en/images/vuex.png" alt="from vuex site"></p>
+<h3 id="참고하기"><a href="#참고하기" class="headerlink" title="참고하기"></a>참고하기</h3><p><a href="https://vuex.vuejs.org/kr/getting-started.html" target="_blank" rel="external">1. Vuex document</a></p>
+<p><a href="https://github.com/vuejs/vuex" target="_blank" rel="external">2. Vuex github</a></p>
+<p><a href="https://vuejs-kr.github.io/update/2017/01/08/using-vue-with-vuex-vue-rotuer/" target="_blank" rel="external">3. Vue 한국 사용자 모임</a></p>
 
             </div>
           
