@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="navigation gard"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JiHyunLee | blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/bug.png?v=1.1" />
+
+
+
+<link rel="canonical" href="https://hnnme.github.io/blog/2017/04/19/vuex-navigation/"/>
+
+
+<meta name="description" content="전역가드를 사용하여 보자전역 가드를 사용하고자 할때 기본골격은 아래와 같다. 12345const router = new VueRouter(&amp;#123; ... &amp;#125;);router.beforeEach((to, from, next) =&amp;gt; &amp;#123;  // ...&amp;#125;); #1 - 뷰라우터를 인식할 수 있도록 객체생성을 한다.1const rou">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="navigation gard">
+<meta property="og:url" content="https://hnnme.github.io/blog/2017/04/19/vuex-navigation/index.html">
+<meta property="og:site_name" content="JiHyunLee | blog">
+<meta property="og:description" content="전역가드를 사용하여 보자전역 가드를 사용하고자 할때 기본골격은 아래와 같다. 12345const router = new VueRouter(&amp;#123; ... &amp;#125;);router.beforeEach((to, from, next) =&amp;gt; &amp;#123;  // ...&amp;#125;); #1 - 뷰라우터를 인식할 수 있도록 객체생성을 한다.1const rou">
+<meta property="og:updated_time" content="2017-04-19T17:13:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="navigation gard">
+<meta name="twitter:description" content="전역가드를 사용하여 보자전역 가드를 사용하고자 할때 기본골격은 아래와 같다. 12345const router = new VueRouter(&amp;#123; ... &amp;#125;);router.beforeEach((to, from, next) =&amp;gt; &amp;#123;  // ...&amp;#125;); #1 - 뷰라우터를 인식할 수 있도록 객체생성을 한다.1const rou">
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> navigation gard - JiHyunLee | blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/blog/." class="logo">JiHyunLee | blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="http://github.com/hnnme">
+                            
+                            
+                                github
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/blog/archives">
+                            
+                            
+                                블로그
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/blog/about">
+                            
+                            
+                                소개
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          navigation gard
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 19 2017
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h2 id="전역가드를-사용하여-보자"><a href="#전역가드를-사용하여-보자" class="headerlink" title="전역가드를 사용하여 보자"></a>전역가드를 사용하여 보자</h2><p>전역 가드를 사용하고자 할때 기본골격은 아래와 같다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123; ... &#125;);</div><div class="line"></div><div class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="1-뷰라우터를-인식할-수-있도록-객체생성을-한다"><a href="#1-뷰라우터를-인식할-수-있도록-객체생성을-한다" class="headerlink" title="#1 - 뷰라우터를 인식할 수 있도록 객체생성을 한다."></a>#1 - 뷰라우터를 인식할 수 있도록 객체생성을 한다.</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123; ... &#125;);</div></pre></td></tr></table></figure>
+<h3 id="2-그-생성자-router의-beforeEach를-사용한다"><a href="#2-그-생성자-router의-beforeEach를-사용한다" class="headerlink" title="#2 - 그 생성자 router의 .beforeEach를 사용한다."></a>#2 - 그 생성자 router의 .beforeEach를 사용한다.</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>여기서! 들어오는 인자값은!</p>
+<ul>
+<li>to      | (라우트) 현재 부분</li>
+<li>from | (라우트) 현재부분으로 오기전 이곳으로 이동시킨 코드가 있는 라우트</li>
+<li>next  | (함수)    액션은 next에 제공된 전달인자에 달려있다. 라우트가 변경됬을시 무엇을 한것인지에 대한 액션이 필요</li>
+</ul>
+<p>예로</p>
+<p>로그인화면에서 로그인이 된 후 메인화면으로 이동시 </p>
+<p>1) 로그인화면 뷰에서는 라우트를 메인화면으로 이동시키는 this.$router.push(‘/‘);라고 했을시 저 코드를 따라 path가 ‘/‘으로 지정된 곳으로 이동한다.</p>
+<p>2) path가 ‘/‘인 뷰에 와서 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123; <span class="comment">// 이 코드를 만나면</span></div></pre></td></tr></table></figure>
+<p><a href="https://router.vuejs.org/kr/" target="_blank" rel="external">참고: Vue Router</a></p>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+    2017
+    <span class="footer-author">Jihyun Lee.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/blog/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/blog/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
